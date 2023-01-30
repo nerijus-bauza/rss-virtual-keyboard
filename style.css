@@ -460,6 +460,7 @@ a {
 .text-content section,
 .text-content aside {
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   transition: transform 0.5s ease;
 }
 
