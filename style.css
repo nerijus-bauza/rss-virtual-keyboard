@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  /* sizes and durations */
+  --key-size: 4.5rem;
+  --spacing: 0.3rem;
+  --text-content-height: 34.7rem;
+  --transition-duration: 0.15s;
+
+  /* device colors */
+  --cl-device-bg: hsl(0deg 0% 27%);
+  --cl-device-bg-active: hsl(0deg 0% 25%);
+  --cl-device-fg: hsl(0deg 0% 86%);
+  --cl-device-fg-active: hsl(0deg 0% 100%);
+  --cl-device-fg-inactive: hsl(0deg 0% 50%);
+  
+  /* textarea colors */
+  --cl-textarea-bg: linear-gradient(
+    170deg,
+    hsl(0deg 0% 22%),
+    hsl(0deg 0% 18%));
+  --cl-textarea-fg: hsl(0deg 0% 100% / 50%);
+
+  /* shadows */
+  --shadow-device:
+    inset 0 0.2rem 0.1rem 0 hsla(0deg 0% 100% / 30%),
+    inset 0 -0.2rem 0.1rem 0 hsla(0deg 0% 0% / 70%),
+    inset 0.2rem 0 0.1rem 0 hsla(0deg 0% 0% / 25%),
+    inset -0.2rem 0 0.1rem 0 hsla(0deg 0% 0% / 25%),
+    inset 0 0.5rem 4rem 0 hsla(0deg 0% 0% / 10%),
+    0 0.5rem 1.3rem 0 hsla(0deg 0% 0% / 75%);
+  --shadow-device-inset:
+    inset 0 0.1rem 0.2rem 0 hsl(0deg 0% 0% / 60%),
+    0 0.1rem 0.1rem 0 hsl(0deg 0% 40% / 60%);
+  --shadow-key: 
+    0 0.1rem 0.2rem 0.1rem hsl(0deg 0% 0%),
+    inset 0 0.1rem 0.1rem 0 hsl(0deg 0% 40%);
+  --shadow-key-inset:
+    inset 0 0.1rem 0.2rem 0 hsl(0deg 0% 0%),
+    0 0.1rem 0.1rem 0 hsl(0deg 0% 40%);
+
+  /* light theme device colors */
+  --cl-light-device-bg: hsl(0deg 0% 85%);
+  --cl-light-device-bg-active: hsl(0deg 0% 82%);
+  --cl-light-device-fg: hsl(0deg 0% 35%);
+  --cl-light-device-fg-active: hsl(0deg 0% 0%);
+  --cl-light-device-fg-inactive: hsl(0deg 0% 50%);
+
+  /* light theme textarea colors */
+  --cl-light-textarea-bg: linear-gradient(
+    170deg,
+    hsl(0deg 0% 72%),
+    hsl(0deg 0% 68%));
+  --cl-light-textarea-fg: hsl(0deg 0% 0% / 60%);
+
+  /* light theme shadows */
+  --shadow-light-key: 
+    0 0.1rem 0.2rem 0.1rem hsl(0deg 0% 45%),
+    inset 0 0.1rem 0.1rem 0 hsl(0deg 0% 100%);
+  --shadow-light-key-inset:
+    inset 0 0.1rem 0.2rem 0 hsl(0deg 0% 45%),
+    0 0.1rem 0.1rem 0 hsl(0deg 0% 100%);
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  font-family: inherit;
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Quicksand, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  min-height: 100vh;
+  background-image: url('./assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  color: var(--cl-device-fg);
+  opacity: 0.8;
+}
+
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.65rem; }
+
+a {
+  font-family: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+
+.text-content {
+  position: relative;
+  height: var(--text-content-height);
+  font-family: 'Space Mono', monospace;
+}
+
+.text-content section,
+.text-content aside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--text-content-height);
+  padding: 2.75rem 2.75rem 4.5rem;
+  background-color: var(--cl-device-bg);
+  color: var(--cl-textarea-fg);
+  border-radius: 2rem;
+  box-shadow: var(--shadow-device);
+}
+
+.text-content aside { 
+  font-family: Quicksand, sans-serif;
+  font-size: 1.5rem;
+  padding: 4rem;
+}
+
+.text-content aside ul { 
+  margin-top: 0.75rem;
+  padding-left: 2.5rem; 
+}
+.text-content aside a { text-decoration: underline; }
+
+.textarea-wrapper {
+  box-shadow: var(--shadow-device-inset);
+  background: var(--cl-textarea-bg);
+  height: 100%;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  overflow: hidden;
+}
+
+.text-content textarea {
+  font-size: 1.6rem;
+  white-space: pre-wrap;
+  tab-size: 4;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  height: 100%;
+  resize: none;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: var(--cl-textarea-fg);
+}
+
+.keyboard {
+  font-weight: 500;
+  margin-top: 1.5rem;
+  padding: 2rem;
+  background-color: var(--cl-device-bg);
+  color: var(--cl-device-fg);
+  border-radius: 2rem;
+  box-shadow: var(--shadow-device);
+  user-select: none;
+}
+
+.keyboard header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 1rem 1rem;
+}
+
+.keyboard header section h1 {
+  display: block;
+  text-align: center;
+}
+
+.keyboard header section a {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  margin-top: 0.4rem;
+}
+
+.keyboard header aside {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.keyboard-layout section { display: flex; }
+
+.key {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--key-size);
+  height: var(--key-size);
+  margin: var(--spacing);
+  user-select: none;
+  cursor: pointer;
+  border-radius: 5rem;
+  background-color: var(--cl-device-bg);
+  box-shadow: var(--shadow-key);
+  transition: backgroud-color var(--transition-duration);
+}
+
+.key:hover { background-color: var(--cl-device-bg-active); }
+
+.key:active,
+.key.active {
+  background-color: var(--cl-device-bg-active);
+  box-shadow: var(--shadow-key-inset);
+}
+
+.key.left {
+  justify-content: flex-start;
+  padding-left: 1.5rem;
+}
+
+.key.right {
+  justify-content: flex-end;
+  padding-right: 1.5rem;
+}
+
+/* double value keys text values styling */
+[data-key-type='double'] div {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: all var(--transition-duration);
+}
+
+[data-key-type='double'] div:first-child {
+  top: 55%;
+  left: 45%;
+  font-size: 1em;
+  opacity: 1;
+}
+
+.shift [data-key-type='double'] div:first-child {
+  top: 70%;
+  left: 30%;
+  font-size: 0.55em;
+  opacity: 0.7;
+}
+
+[data-key-type='double'] div:last-child {
+  top: 25%;
+  left: 70%;
+  font-size: 0.55em;
+  opacity: 0.7;
+}
+
+.shift [data-key-type='double'] div:last-child {
+  top: 45%;
+  left: 55%;
+  font-size: 1em;
+  opacity: 1;
+}
+
+/* char keys text values styling with caps or/and shift pressed */
+[data-key-type='char'] div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity var(--transition-duration);
+}
+
+[data-key-type='char'] div:last-child { opacity: 0; }
+
+.caps:not(.shift) [data-key-type='char'] div:first-child { opacity: 0; }
+.caps:not(.shift) [data-key-type='char'] div:last-child { opacity: 1; }
+.shift:not(.caps) [data-key-type='char'] div:first-child { opacity: 0; }
+.shift:not(.caps) [data-key-type='char'] div:last-child { opacity: 1; }
+
+/* operational and modifier keys styling */
+[data-key-type='operation'],
+[data-key-type='modifier'],
+[data-key-type='toggle'],
+[data-key-type='other'] {
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+/* capsLock indicator styling */
+[data-key-type='toggle'] span {
+  background-color: transparent;
+  margin-left: 0.8rem;
+  width: calc(var(--key-size) / 6);
+  height: calc(var(--key-size) / 6);
+  border-radius: 50%;
+  transition: all var(--transition-duration);
+}
+
+.caps [data-key-type='toggle'] span {
+  background-color: var(--cl-device-fg);
+}
+
+/* width of nonstandard keys */
+.w-15 { width: calc((1.5 * var(--key-size)) + (2 * var(--spacing))); }
+
+.w-20 { width: calc((2 * var(--key-size)) + (2 * var(--spacing))); }
+
+.w-25 { width: calc((2.5 * var(--key-size)) + (4 * var(--spacing))); }
+
+.w-100 { width: calc((7 * var(--key-size)) + (12 * var(--spacing))); }
+
+/* switch buttons */
+.text-content .close-help {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 2rem;
+  color: var(--cl-device-fg);
+  width: calc(var(--key-size) / 2);
+  height: calc(var(--key-size) / 2);
+  background-color: transparent;
+  outline: none;
+  border: none;
+  opacity: 0.7;
+  transition: opacity var(--transition-duration);
+}
+
+.text-content .close-help:hover { opacity: 1; }
+
+.text-content .open-help {
+  --open-help-btn-size: 2.2rem;
+  --open-help-btn-pad: 0.2rem;
+
+  position: absolute;
+  left: 2.6rem;
+  bottom: 1.25rem;
+  height: var(--open-help-btn-size);
+  width: var(--open-help-btn-size);
+  padding: var(--open-help-btn-pad);
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: var(--cl-device-bg);
+  box-shadow: var(--shadow-key-inset);
+}
+
+.text-content .open-help span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Quicksand, sans-serif;
+  font-size: 1.4rem;
+  width: calc(var(--open-help-btn-size) - 2 * var(--open-help-btn-pad));
+  height: calc(var(--open-help-btn-size) - 2 * var(--open-help-btn-pad));
+  border-radius: 50%;
+  box-shadow: var(--shadow-key);
+  color: var(--cl-device-fg);
+  background-color: var(--cl-device-bg);
+}
+
+.text-content .open-help:hover span { background-color: var(--cl-device-bg-active); }
+
+.text-content .open-help:active span { box-shadow: none; }
+
+.lang-switch,
+.theme-switch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--cl-device-fg-inactive);
+  transition: background-color var(--transition-duration);
+}
+
+.theme-switch {
+  position: absolute;
+  right: 2.6rem;
+  bottom: 1.5rem;
+}
+
+.theme-switch span:first-child {
+  font-family: Quicksand, sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: var(--cl-device-fg-active);
+  opacity: 0.9;
+}
+
+.switch-btn {
+  --switch-size: calc(var(--key-size) / 4);
+  --switch-pad: 0.2rem;
+  --switch-border: 0.1rem;
+
+  width: calc(var(--switch-size) * 2 + (2 * (var(--switch-pad) + var(--switch-border))));
+  height: calc(var(--switch-size) + (2 * (var(--switch-pad) + var(--switch-border))));
+  padding: calc(var(--switch-pad) * 1.5) var(--switch-pad) var(--switch-pad) var(--switch-pad);
+  margin: 0 0.5rem;
+  border-radius: 2rem;
+  background-color: var(--cl-device-bg-active);
+  box-shadow: var(--shadow-key-inset);
+}
+
+.switch-btn div {
+  width: var(--switch-size);
+  height: var(--switch-size);
+  border-radius: 50%;
+  position: relative;
+  transition: transform var(--transition-duration);
+  background-color: var(--cl-device-bg);
+  box-shadow: var(--shadow-key);
+}
+
+.en .lang-switch span:first-child { color: var(--cl-device-fg-active); }
+
+.lt .lang-switch span:last-child { color: var(--cl-device-fg-active); }
+
+.lt .switch-btn div { transform: translateX(var(--switch-size)); }
+
+.light .text-content .switch-btn div { transform: translateX(var(--switch-size)); }
+
+/* light theme colors */
+.light {
+  --cl-device-bg: var(--cl-light-device-bg);
+  --cl-device-bg-active: var(--cl-light-device-bg-active);
+  --cl-device-fg: var(--cl-light-device-fg);
+  --cl-device-fg-active: var(--cl-light-device-fg-active);
+  --cl-device-fg-inactive: var(--cl-light-device-fg-inactive);
+  --shadow-key: var(--shadow-light-key);
+  --shadow-key-inset: var(--shadow-light-key-inset);
+  --cl-textarea-bg: var(--cl-light-textarea-bg);
+  --cl-textarea-fg: var(--cl-light-textarea-fg);
+}
+
+/* textboard animations when opening help */
+
+/* initial rotate state */
+.text-content {
+  transform-style: preserve-3d;
+  perspective: 150rem;
+}
+
+.text-content section,
+.text-content aside {
+  backface-visibility: hidden;
+  transition: transform 0.5s ease;
+}
+
+.text-content aside { transform: rotateY(180deg); }
+
+/* rotate when help class is added on .text-content */
+.text-content.help section { transform: rotateY(180deg); }
+
+.text-content.help aside { transform: rotateY(360deg); }
+
+/* scrollbars on chrome, safari, opera */
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 100vw;
+  margin-block: 0.3rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cl-device-bg);
+  border-radius: 100vw;
+}
+
+/* scrollbars of firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cl-device-bg) transparent;
+}
+
+/* media queries */
+@media only screen and (max-width: 850px) {
+  html { font-size: 50%; }
+}
+
+@media only screen and (max-width: 670px) {
+  html { font-size: 40%; }
+}
+
+@media only screen and (max-width: 540px) {
+  html { font-size: 30%; }
+}
+
+@media only screen and (max-width: 410px) {
+  html { font-size: 25%; }
+}
