@@ -81,6 +81,9 @@ body {
   font-family: Quicksand, sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   min-height: 100vh;
   background-image: url('./assets/bg.jpg');
   background-repeat: no-repeat;
@@ -152,6 +155,9 @@ a {
 
 .text-content textarea {
   font-size: 1.6rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   white-space: pre-wrap;
   tab-size: 4;
   padding: 0.5rem 1rem;
