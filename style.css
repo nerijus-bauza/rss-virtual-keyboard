@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Mono&display=swap');
 
 :root {
   /* sizes and durations */
@@ -9,6 +9,8 @@
   --transition-duration: 0.15s;
 
   /* fonts */
+  --font-primary: Quicksand, sans-serif;
+  --font-secondary: 'Red Hat Mono', monospace;
 
   /* device colors */
   --cl-device-bg: hsl(0deg 0% 27%);
@@ -80,7 +82,7 @@ html {
 }
 
 body {
-  font-family: Quicksand, sans-serif;
+  font-family: var(--font-primary);
   font-size: 1.6rem;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -117,7 +119,6 @@ a {
 .text-content {
   position: relative;
   height: var(--text-content-height);
-  font-family: 'Space Mono', monospace;
 }
 
 .text-content section,
@@ -135,7 +136,6 @@ a {
 }
 
 .text-content aside { 
-  font-family: Quicksand, sans-serif;
   font-size: 1.5rem;
   padding: 4rem;
 }
@@ -156,6 +156,7 @@ a {
 }
 
 .text-content textarea {
+  font-family: var(--font-secondary);
   font-size: 1.6rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -173,7 +174,6 @@ a {
 }
 
 .keyboard {
-  font-weight: 500;
   margin-top: 1.5rem;
   padding: 2rem;
   background-color: var(--cl-device-bg);
@@ -199,15 +199,11 @@ a {
 .keyboard header section a {
   display: block;
   font-size: 0.9rem;
-  font-weight: 400;
   letter-spacing: 0.1rem;
   margin-top: 0.4rem;
 }
 
-.keyboard header aside {
-  font-size: 1rem;
-  font-weight: 400;
-}
+.keyboard header aside { font-size: 1rem; }
 
 .keyboard-layout section { display: flex; }
 
@@ -302,7 +298,6 @@ a {
 [data-key-type='toggle'],
 [data-key-type='other'] {
   font-size: 1.3rem;
-  font-weight: 500;
   text-transform: lowercase;
 }
 
@@ -370,7 +365,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Quicksand, sans-serif;
   font-size: 1.4rem;
   width: calc(var(--open-help-btn-size) - 2 * var(--open-help-btn-pad));
   height: calc(var(--open-help-btn-size) - 2 * var(--open-help-btn-pad));
@@ -400,7 +394,6 @@ a {
 }
 
 .theme-switch span:first-child {
-  font-family: Quicksand, sans-serif;
   font-size: 1rem;
   text-transform: uppercase;
   color: var(--cl-device-fg-active);
