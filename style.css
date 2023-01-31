@@ -24,7 +24,7 @@
     170deg,
     hsl(0deg 0% 22%),
     hsl(0deg 0% 18%));
-  --cl-textarea-fg: hsl(0deg 0% 100% / 50%);
+  --cl-textarea-fg: hsl(0deg 0% 67%);
 
   /* shadows */
   --shadow-device:
@@ -56,7 +56,7 @@
     170deg,
     hsl(0deg 0% 72%),
     hsl(0deg 0% 68%));
-  --cl-light-textarea-fg: hsl(0deg 0% 0% / 60%);
+  --cl-light-textarea-fg: hsl(0deg 0% 25%);
 
   /* light theme shadows */
   --shadow-light-key: 
