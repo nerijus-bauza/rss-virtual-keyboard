@@ -8,6 +8,8 @@
   --text-content-height: 34.7rem;
   --transition-duration: 0.15s;
 
+  /* fonts */
+
   /* device colors */
   --cl-device-bg: hsl(0deg 0% 27%);
   --cl-device-bg-active: hsl(0deg 0% 25%);
