@@ -181,6 +181,7 @@ a {
   border-radius: 2rem;
   box-shadow: var(--shadow-device);
   user-select: none;
+  -webkit-user-select: none;
 }
 
 .keyboard header {
